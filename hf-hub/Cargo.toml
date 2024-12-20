@@ -15,8 +15,13 @@ path = "src/main.rs"
 name = "list_repo_filenames"
 path = "src/bin/list_repo_filenames.rs"
 
+[[bin]]
+name = "model_downloader"
+path = "src/bin/model_downloader.rs"
 
 [dependencies]
 candle-core = { workspace = true }
 hf-hub = { workspace = true }
+anyhow = { workspace = true }
+tokio = { workspace = true }
 serde_json = { workspace = true }

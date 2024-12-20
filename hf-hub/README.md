@@ -94,3 +94,10 @@ RepoInfo { siblings: [Siblings { rfilename: ".gitattributes" }, Siblings { rfile
 **change the model `repo_id`("sentence-transformers/all-MiniLM-L6-v2")` to get the different model's files.**
 
 **check all the model's `repo_id` in the huggingface hub https://huggingface.co/models**
+
+**Run the bin locally at the `hf-hub` workspace root**
+
+```bash
+cargo run --bin list_repo_filenames
+```
+
