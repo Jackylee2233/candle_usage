@@ -1,6 +1,12 @@
 [workspace]
 members = [
-    "hf-hub",
+    "hf-hub", "hf-model-downloader",
 ]
 
+resolver = "2"
 
+
+[workspace.dependencies]
+candle-core = "0.8.1"
+hf-hub = { version = "0.3.2" }
+serde_json = "1.0"

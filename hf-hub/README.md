@@ -5,9 +5,9 @@
 ##### Q1. How can I retrieve and list the model's filenames (Files Tag) in JSON format from the Hugging Face Hub using the `hf_hub` API?
 Retrieve the model's files from the Huggingface hub for various purposes, including listing model files to manage it's parameters when your AI App needs to switch between multiple models.
 
-Following code explain the hugging face `ApiRepo::info()` method how to get the model's files and sha date in json format then convert it to `RepoInfo` raw format.
+Following two block of codes explain the hugging face `ApiRepo::info()` method, first, get the model's files and sha date in json format from the hugging face hub, then convert it to `RepoInfo` struct locally.
 
-
+For more information about the `ApiRepo::info()` method, please refer to the [Hugging Face API Documentation](https://docs.rs/hf-hub/0.3.2/hf_hub/api/sync/struct.ApiRepo.html#method.info).
 
 ```rust
 use hf_hub::api::sync::Api;
@@ -29,7 +29,7 @@ fn main() {
     println!("{}", serde_json::to_string_pretty(&json_value).unwrap());
 }
 ```
-***Run the code should return the following JSON format;If you encounter an error, please ensure your CLI can reach the Hugging Face hub.***
+**Run the code should return the following JSON format;If you encounter an error, please ensure your CLI can reach the Hugging Face hub.**
 
 ```markdown
 {
@@ -69,7 +69,7 @@ fn main() {
 }
 
 ```
-***Run the code should return the following `RepoInfo` raw format***
+**Run the code should return the following `RepoInfo` raw format**
 
 ```rust
 use hf_hub::api::sync::Api;
@@ -91,6 +91,6 @@ RepoInfo { siblings: [Siblings { rfilename: ".gitattributes" }, Siblings { rfile
 
 ```
 
-***change the model `repo_id("sentence-transformers/all-MiniLM-L6-v2")` to get the different model's files.***
+**change the model `repo_id`("sentence-transformers/all-MiniLM-L6-v2")` to get the different model's files.**
 
-***check all the model's `repo_id` in the huggingface hub https://huggingface.co/models***
+**check all the model's `repo_id` in the huggingface hub https://huggingface.co/models**

@@ -1,10 +1,22 @@
 [package]
-name = "my-hf-hub-usage"
+name = "hf_hub_use"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+name = "hf_hub_use"
+path = "src/lib.rs"
+
+[[bin]]
+name = "hf_hub_use"
+path = "src/main.rs"
+
+[[bin]]
+name = "list_repo_filenames"
+path = "src/bin/list_repo_filenames.rs"
+
 
 [dependencies]
-candle-core = "0.8.1"
-hf-hub = { version = "0.3.2" }
-serde_json = "1.0"
+candle-core = { workspace = true }
+hf-hub = { workspace = true }
+serde_json = { workspace = true }
